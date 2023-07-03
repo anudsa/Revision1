@@ -1,16 +1,16 @@
 const baseEndpoint = 'https://api.github.com';
 const usersEndpoint = `${baseEndpoint}/users`;
-const $n = document.querySelector('name');
-const $b = document.querySelector('#blog');
-const $l = document.querySelector('.location');
+const dataName = document.querySelector('name');
+const dataBlog = document.querySelector('#blog');
+const dataLocation = document.querySelector('.location');
 
-function displayUser(username) {
-  $n.textContent = 'cargando...';
+async function displayUser(username) {
+  dataName.textContent = 'cargando...';
   const response = await fetch(`${usersEndpoint}/${username}`);
   console.log(data);
-  $n.textContent = '${data.name}';
-  $b.textContent = '${data.blog}';
-  $l.textContent = '${data.location}';
+  dataName.textContent = '${data.name}';
+  dataBlog.textContent = '${data.blog}';
+  dataLocation.textContent = '${data.location}';
 }
 
 function handleError(err) {
